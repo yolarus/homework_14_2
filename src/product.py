@@ -1,13 +1,13 @@
 class Product:
     """
-    Класс продуктов интер-нет магазина
+    Класс продуктов интернет магазина
     """
     name: str
     description: str
     price: float
     quantity: int
 
-    def __init__(self, name, description, price, quantity):
+    def __init__(self, name: str, description: str, price: float, quantity: int) -> None:
         """
         Конструктор объектов
         """
