@@ -1,5 +1,4 @@
 import json
-import os
 
 from src.category import Category
 from src.product import Product
@@ -9,9 +8,7 @@ def read_json(path: str) -> list[Category]:
     """
     Считывание данных из json-файла по переданному пути и конвертация их в экземпляры классов
     """
-    full_path = os.path.abspath(path)
-
-    with open(full_path, "r") as file:
+    with open(path, "r") as file:
         data = json.load(file)
 
     categories = []
