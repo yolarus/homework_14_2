@@ -1,11 +1,11 @@
-from src.product import Product
-from src.category import Category
-
 import pytest
+
+from src.category import Category
+from src.product import Product
 
 
 @pytest.fixture()
-def first_product():
+def first_product() -> Product:
     return Product(
         name="Iphone 15",
         description="Apple Iphone 15",

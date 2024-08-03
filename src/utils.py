@@ -1,5 +1,5 @@
-import os
 import json
+import os
 
 from src.category import Category
 from src.product import Product
