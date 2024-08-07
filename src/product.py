@@ -4,7 +4,7 @@ class Product:
     """
     name: str
     description: str
-    price: float
+    __price: float
     quantity: int
     products_list: list = []
 
@@ -14,7 +14,7 @@ class Product:
         """
         self.name = name
         self.description = description
-        self.price = price
+        self.__price = price
         self.quantity = quantity
         Product.products_list.append(self)
 
@@ -32,3 +32,24 @@ class Product:
             else:
                 new_prod = cls(product["name"], product["description"], product["price"], product["quantity"])
                 return new_prod
+
+    @property
+    def price(self) -> float:
+        """
+        Геттер атрибута __price - возврщает цену продукта
+        """
+        return self.__price
+
+    @price.setter
+    def price(self, new_price) -> None:
+        """
+        Сеттер атрибута __price - обновляет цену продукта, если новая цена ниже старой запрашивается подтверждение
+        """
+        if new_price > 0:
+            if new_price < self.__price:
+                if input("Вы уверенны, что хотите снизить цене? Введите 'y' - если да, 'n' - если нет: ") == "y":
+                    self.__price = new_price
+            else:
+                self.__price = new_price
+        else:
+            print("Цена не должна быть нулевая или отрицательная")

@@ -24,7 +24,7 @@ class Category:
     @property
     def products(self) -> str:
         """
-        Геттер атрибута __products в виде строки
+        Геттер атрибута __products - вовзращает список продуктов в виде строки
         """
         result = ""
         for product in self.__products:
@@ -34,7 +34,7 @@ class Category:
     @property
     def products_list(self) -> list:
         """
-        Геттер атрибута __products в виде списка
+        Геттер атрибута __products - вовзращает список продуктов в виде списка
         """
         return self.__products
 
