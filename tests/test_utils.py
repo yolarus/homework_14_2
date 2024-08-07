@@ -13,7 +13,7 @@ def test_read_json() -> None:
         result = read_json("test.json")
         names = ["Продукт 1", "Продукт 2", "Продукт 3",]
         for cat in result:
-            for i, prod in enumerate(cat.products):
+            for i, prod in enumerate(cat.products_list):
                 assert prod.name == names[i]
 
         mock_file.assert_called_once_with("test.json", "r")

@@ -21,11 +21,11 @@ class Product:
     @classmethod
     def new_product(cls, product: dict):
         """
-        Формирует новый продукт из словаря, если продукт уже существует, то возвращает старый продукт с
+        Формирует новый продукт из словаря, если продукт с таким именем уже существует, то возвращает новый продукт с
         наибольшей ценой и суммированным количеством
         """
         for prod in cls.products_list:
-            if prod.name == product["name"] and prod.description == product["description"]:
+            if prod.name == product["name"]:
                 prod.price = max(prod.price, product["price"])
                 prod.quantity += product["quantity"]
                 return prod
@@ -47,7 +47,7 @@ class Product:
         """
         if new_price > 0:
             if new_price < self.__price:
-                if input("Вы уверенны, что хотите снизить цене? Введите 'y' - если да, 'n' - если нет: ") == "y":
+                if input("Вы уверены, что хотите снизить цену? Введите 'y' - если да, 'n' - если нет: ") == "y":
                     self.__price = new_price
             else:
                 self.__price = new_price

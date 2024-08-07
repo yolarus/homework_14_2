@@ -28,8 +28,6 @@ if __name__ == "__main__":
     print(new_product.price)
     print(new_product.quantity)
 
-    print(Product.products_list)
-
     new_product_2 = Product.new_product(
         {"name": "Samsung Galaxy S24 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 210000.0,
          "quantity": 10})
