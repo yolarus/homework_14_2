@@ -2,7 +2,6 @@ from src.category import Category
 from src.product import Product
 from src.utils import read_json
 
-
 if __name__ == "__main__":
     product1 = Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
     product2 = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
@@ -21,12 +20,20 @@ if __name__ == "__main__":
     print(category1.product_count)
 
     new_product = Product.new_product(
-        {"name": "Samsung Galaxy S23 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 180000.0,
+        {"name": "Samsung Galaxy S23 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 160000.0,
          "quantity": 5})
     print(new_product.name)
     print(new_product.description)
     print(new_product.price)
     print(new_product.quantity)
+
+    new_product_2 = Product.new_product(
+        {"name": "Samsung Galaxy S24 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 210000.0,
+         "quantity": 10})
+    print(new_product_2.name)
+    print(new_product_2.description)
+    print(new_product_2.price)
+    print(new_product_2.quantity)
 
     new_product.price = 800
     print(new_product.price)
@@ -38,5 +45,5 @@ if __name__ == "__main__":
 
     data = read_json("data/products.json")
     for cat in data:
-        for prod in cat.products:
+        for prod in cat.products_list:
             print(prod.name)
