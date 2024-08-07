@@ -24,12 +24,19 @@ class Category:
     @property
     def products(self) -> str:
         """
-        Геттер атрибута __products
+        Геттер атрибута __products в виде строки
         """
         result = ""
         for product in self.__products:
             result += f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n"
         return result
+
+    @property
+    def products_list(self) -> list:
+        """
+        Геттер атрибута __products в виде списка
+        """
+        return self.__products
 
     def add_product(self, new_product: Product) -> None:
         """

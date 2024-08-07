@@ -21,12 +21,22 @@ if __name__ == "__main__":
     print(category1.product_count)
 
     new_product = Product.new_product(
-        {"name": "Samsung Galaxy S23 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 180000.0,
+        {"name": "Samsung Galaxy S23 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 160000.0,
          "quantity": 5})
     print(new_product.name)
     print(new_product.description)
     print(new_product.price)
     print(new_product.quantity)
+
+    print(Product.products_list)
+
+    new_product_2 = Product.new_product(
+        {"name": "Samsung Galaxy S24 Ultra", "description": "256GB, Серый цвет, 200MP камера", "price": 210000.0,
+         "quantity": 10})
+    print(new_product_2.name)
+    print(new_product_2.description)
+    print(new_product_2.price)
+    print(new_product_2.quantity)
 
     new_product.price = 800
     print(new_product.price)
@@ -38,5 +48,5 @@ if __name__ == "__main__":
 
     data = read_json("data/products.json")
     for cat in data:
-        for prod in cat.products:
+        for prod in cat.products_list:
             print(prod.name)
