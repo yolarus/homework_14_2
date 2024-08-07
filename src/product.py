@@ -39,7 +39,7 @@ class Product:
     @property
     def price(self) -> float:
         """
-        Геттер атрибута __price - возврщает цену продукта
+        Геттер атрибута __price - возвращает цену продукта
         """
         return self.__price
 
