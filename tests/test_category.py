@@ -11,7 +11,7 @@ def test_category_init(first_cat: Category, second_cat: Category) -> None:
 
 
 def test_category_products(first_cat: Category) -> None:
-    assert first_cat.products == f"Iphone 15, 1500 руб. Остаток: 10 шт.\nIphone 14, 1200 руб. Остаток: 15 шт.\n"
+    assert first_cat.products == "Iphone 15, 1500 руб. Остаток: 10 шт.\nIphone 14, 1200 руб. Остаток: 15 шт.\n"
 
 
 def test_category_products_list(first_cat: Category, first_product: Product, second_product: Product) -> None:

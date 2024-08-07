@@ -44,4 +44,3 @@ class Category:
         """
         self.__products.append(new_product)
         Category.product_count += 1
-

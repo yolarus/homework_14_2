@@ -1,6 +1,7 @@
-from src.product import Product
-from unittest.mock import patch
 from typing import Any
+from unittest.mock import patch
+
+from src.product import Product
 
 
 def test_product_init(first_product: Product) -> None:

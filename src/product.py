@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class Product:
     """
     Класс продуктов интернет магазина
@@ -19,7 +22,7 @@ class Product:
         Product.products_list.append(self)
 
     @classmethod
-    def new_product(cls, product: dict):
+    def new_product(cls, product: dict) -> Any:
         """
         Формирует новый продукт из словаря, если продукт с таким именем уже существует, то возвращает новый продукт с
         наибольшей ценой и суммированным количеством
@@ -41,7 +44,7 @@ class Product:
         return self.__price
 
     @price.setter
-    def price(self, new_price) -> None:
+    def price(self, new_price: float) -> None:
         """
         Сеттер атрибута __price - обновляет цену продукта, если новая цена ниже старой запрашивается подтверждение
         """
